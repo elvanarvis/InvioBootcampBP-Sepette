@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "501213869871",
+    "project_id": "sepette-356dc",
+    "storage_bucket": "sepette-356dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501213869871:android:1dced5404c66b8c3be53da",
+        "android_client_info": {
+          "package_name": "com.bootcamp.inviobootcampbp_sepette"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501213869871-hrqsjsrt6bhpptk6rga959l56hhj6es8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bootcamp.inviobootcampbp_sepette",
+            "certificate_hash": "84b436a3faf04b141ca857285ac6eac4321ce864"
+          }
+        },
+        {
+          "client_id": "501213869871-n9ibnqije2g278tcn9a3q70hvuka1aps.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxScmr0hbxbG9aTEn06aO_AH7aKjjVfH4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501213869871-n9ibnqije2g278tcn9a3q70hvuka1aps.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

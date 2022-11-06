@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="signUpFragment"
+            type="com.bootcamp.inviobootcampbp_sepette.ui.fragment.SignUpFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.SignUpFragment">
+
+        <ImageView
+            android:id="@+id/login_img"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/login_toolbar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Kaydol"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/login_img"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/login_img"
+
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signup_email_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="32dp"
+            android:hint="e-mail"
+            android:outlineAmbientShadowColor="@color/burger"
+            android:outlineSpotShadowColor="@color/burger"
+            android:textColorHint="@color/text_black"
+            app:boxCornerRadiusTopEnd="50dp"
+            app:boxCornerRadiusTopStart="50dp"
+            app:boxStrokeColor="@color/burger"
+            app:boxStrokeWidth="4dp"
+            app:hintTextColor="@color/burger"
+            app:layout_constraintTop_toBottomOf="@id/login_img">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signupEmail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/domat"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:src="@drawable/domat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signup_email_layout" />
+
+        <ImageView
+            android:id="@+id/marul"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:src="@drawable/marul"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/domat" />
+
+        <ImageView
+            android:id="@+id/peynir"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:src="@drawable/peynir"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/marul" />
+
+        <ImageView
+            android:id="@+id/kofte"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:src="@drawable/kofte"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/peynir" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signup_password_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:hint="şifre"
+            android:textColorHint="@color/text_black"
+            app:boxCornerRadiusBottomEnd="50dp"
+            app:boxCornerRadiusBottomStart="50dp"
+            app:boxStrokeColor="@color/burger"
+            app:boxStrokeWidth="4dp"
+            app:hintTextColor="@color/burger"
+            app:layout_constraintTop_toBottomOf="@id/kofte">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signupPassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:inputType="textPassword"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sign_up_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="40dp"
+            android:backgroundTint="@color/mor"
+            android:text="Kaydol"
+            android:onClick="@{() -> signUpFragment.signUp(signupEmail.getText().toString(),signupPassword.getText().toString())}"
+            app:layout_constraintBottom_toTopOf="@id/nav_text"
+            app:cornerRadius="50dp"
+            app:layout_constraintEnd_toEndOf="@id/signup_email_layout"
+            app:layout_constraintStart_toStartOf="@id/signup_email_layout"
+            app:layout_constraintTop_toBottomOf="@id/signup_password_layout" />
+
+
+        <TextView
+            android:id="@+id/sign_in_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center_vertical"
+            android:text="Hesabın varsa"
+            android:textColor="@color/text_black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/nav_text"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@id/signup_email_layout" />
+
+        <TextView
+            android:id="@+id/nav_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="   giriş yap"
+            android:textColor="@color/mor"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/signup_email_layout"
+            app:layout_constraintStart_toEndOf="@id/sign_in_text"
+            app:layout_constraintTop_toTopOf="@id/sign_in_text" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

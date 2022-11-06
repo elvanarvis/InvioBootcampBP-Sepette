@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="profileFragment"
+            type="com.bootcamp.inviobootcampbp_sepette.ui.fragment.ProfileFragment" />
+
+        <variable
+            name="emailText" type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/light_grey"
+        tools:context=".ui.fragment.ProfileFragment">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_id"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/login_toolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="Profil"
+            app:titleCentered="true"
+            app:titleTextColor="@color/white" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/profile_lottie"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_id"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/profile_person"
+            app:lottie_repeatCount="1" />
+
+        <TextView
+            android:id="@+id/profile_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-20dp"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/text_black"
+            android:textSize="20sp"
+            android:text="@{emailText}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile_lottie" />
+
+        <TextView
+            android:id="@+id/update_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/roboto"
+            android:gravity="center"
+            android:onClick="@{() -> profileFragment.resetEmail()}"
+            android:text="Mailini güncelle"
+            android:textColor="@color/text_black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@id/update_password" />
+
+        <TextView
+            android:id="@+id/update_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/roboto"
+            android:gravity="center"
+            android:onClick="@{() -> profileFragment.resetPassword()}"
+            android:text="Şifreni değiştir"
+            android:textColor="@color/text_black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@id/sign_out" />
+
+        <TextView
+            android:id="@+id/sign_out"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/roboto"
+            android:gravity="center"
+            android:text="Çıkış"
+            android:onClick="@{() -> profileFragment.signOut()}"
+            android:textColor="@color/mor"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

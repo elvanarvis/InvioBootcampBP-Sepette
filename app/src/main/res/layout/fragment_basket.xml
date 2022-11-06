@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="basketFragment"
+            type="com.bootcamp.inviobootcampbp_sepette.ui.fragment.BasketFragment" />
+
+        <variable
+            name="sepetAdapter"
+            type="com.bootcamp.inviobootcampbp_sepette.ui.adapter.BasketYemeklerAdapter" />
+
+        <variable
+            name="totalFiyat"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/light_grey"
+        tools:context=".ui.fragment.BasketFragment">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:title="Sepetim"
+            app:titleTextColor="@color/white"
+            app:titleCentered="true"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/login_toolbar" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sepet_bottom_cons"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sepet_add_basket_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:backgroundTint="@color/mor"
+                android:text="Devam"
+                app:cornerRadius="50dp"
+                app:layout_constraintBottom_toBottomOf="@id/sepet_bottom_cons"
+                app:layout_constraintEnd_toStartOf="@id/sepet_total_fiyat"
+                app:layout_constraintStart_toStartOf="@id/sepet_bottom_cons"
+                app:layout_constraintTop_toTopOf="@id/sepet_bottom_cons" />
+
+            <TextView
+                android:id="@+id/sepet_total_fiyat"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="@{totalFiyat}"
+                android:textStyle="bold"
+                android:textColor="@color/mor"
+                android:textSize="18sp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="@id/sepet_bottom_cons" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/sepet_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:adapter="@{sepetAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/sepet_bottom_cons"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
